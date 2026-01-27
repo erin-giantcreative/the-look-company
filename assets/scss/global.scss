@@ -201,19 +201,16 @@ body.privacy-policy .container-wrap,
 }
 /* RESPONSIVE SECTIONS */
 @include mobile {
-  body .col .nectar-button[data-color-override=false].nectar-button.has-icon.hide-mobile,
   .hide-mobile {
     display: none;
   }
 }
 @include tablet {
-  body .col .nectar-button[data-color-override=false].nectar-button.has-icon.hide-tablet,
   .hide-tablet {
     display: none;
   }
 }
 @include desktop {
-  body .col .nectar-button[data-color-override=false].nectar-button.has-icon.hide-desktop,
   .hide-desktop {
     display: none;
   }

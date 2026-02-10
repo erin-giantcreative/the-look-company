@@ -1,0 +1,35 @@
+.widget_nav_menu {
+  .menu-footer-nav-container {
+    ul,li {
+      margin: 0;
+      list-style: none;
+    }
+    > ul {
+      display: flex;
+      gap: 60px;
+      justify-content: flex-end;
+      > li {
+        > a {
+          font-family: "aktiv-grotesk";
+          font-size: 20px;
+          text-transform: uppercase;
+          font-weight: 700;
+          letter-spacing: 6.6px;
+        }
+        ul {
+          margin-top: 20px;
+          > li {
+            > a {
+              display: inline-block;
+              font-family: "aktiv-grotesk";
+              font-size: 16px;
+              font-weight: 400;
+              letter-spacing: 1.6px;
+              padding: 8px 0 !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}

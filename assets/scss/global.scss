@@ -1,16 +1,36 @@
 body.material .ocm-effect-wrap .container-wrap {
   overflow: hidden;
 }
+body[data-header-resize="0"] .container-wrap, body[data-header-resize="0"] .project-title {
+  padding-top: 0 !important;
+}
 body, html, .testimonial_slider:not([data-style*=multiple_visible]) blockquote, blockquote {
   font-family: "Gotham", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
-  line-height: 1.37;
 }
-h1{
+h1 {
   font-family:"clarendon-text-pro";
+}
+h1, h2 {
+  @include mobile {
+    font-size: 40px !important;
+  }
 }
 h2,h3,h4,h5{
   font-family: "aktiv-grotesk-thin",sans-serif;
+}
+.accessibility h2,
+.privacy-policy h2 {
+  font-family:"clarendon-text-pro";
+  font-size: 30px;
+  line-height: 1.4;
+  strong {
+    font-weight: 400 !important;
+  }
+  font-weight: 400 !important;
+  @include mobile {
+    font-size: 24px;
+  }
 }
 .kicker {
   margin-bottom: 6px !important;
@@ -71,9 +91,12 @@ body .col h2:not(.gform_submission_error),body h3.heading-h2,
 ul:last-child {
   margin-bottom: 0;
 }
-
 .column-image-bg {
   transition: all .45s cubic-bezier(.25,1,.33,1) !important;
+}
+.wpb_text_column a {
+  color: $brand-teal;
+  font-weight: 500;
 }
 
 /* IMAGES */
@@ -109,7 +132,6 @@ ul:last-child {
   display: inline-block;
 }
 /* padding for main rows */
-body.privacy-policy .container-wrap,
 .vc_row .row_col_wrap_12 {
   padding: 40px 0;
   @include tablet {
@@ -213,83 +235,5 @@ body.privacy-policy .container-wrap,
 @include desktop {
   .hide-desktop {
     display: none;
-  }
-}
-/* GRAVITY FORMS */
-body .gform-theme--framework.gform-theme.gform_wrapper,
-body .gform_wrapper,
-body[data-form-submit=regular] .gform_wrapper,
-body[data-form-submit=regular] .container-wrap .gform_wrapper.gform-theme--foundation {
-  .gform_fields {
-    margin-top: 24px !important;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-  }
-  margin-bottom: 0;
-  .gform_heading {
-    display: none;
-  }
-  .top_label .gfield_label {
-    margin-top: 0 !important;
-    color: $tertiary-color !important;
-    font-family: 'Futura';
-    font-size: 20px;
-    font-weight: 500;
-    text-transform: capitalize !important;
-    .gfield_required {
-      color: $primary-color !important;
-      font-style: normal;
-    }
-  }
-  input[type=date], input[type=email], input[type=number], input[type=password], input[type=search], input[type=tel], input[type=text]:not([name="s"]), input[type=url], select {
-    block-size: auto !important;
-    border-radius: 0;
-    padding: 16px !important;
-    border: 1px solid #262626 !important;
-    background-color: transparent !important;
-    border: none;
-    color: $tertiary-color !important;
-    &:focus {
-      box-shadow: none;
-    }
-  }
-  ::placeholder {
-    color: #E0E0E0 !important;
-    opacity: 1;
-  }
-
-  .gform_footer {
-    width: 100%;
-    margin-top: 48px !important;
-    padding-top: 0;
-    padding-bottom: 0;
-    input:is([type=submit]),
-    button[type=button],
-    button[type=submit],
-    input[type=submit] {
-      border-radius: 0 !important;
-      -webkit-border-radius: 0 !important;
-      padding: 16px 28px !important;
-      line-height: 1;
-      font-size: 20px !important;
-      vertical-align: baseline;
-      margin: 0 !important;
-      text-align: center;
-      color: $secondary-color !important;
-      border: 2px solid $primary-color;
-      background-color: $primary-color !important;
-      transition: all .45s cubic-bezier(.25,1,.33,1) !important;
-      text-transform: capitalize;
-      span {
-        display: inline-block;
-        vertical-align: baseline;
-      }
-      &:hover {
-        background-color: transparent !important;
-        color: $primary-color !important;
-        opacity: 1;
-      }
-    }
   }
 }

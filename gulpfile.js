@@ -20,13 +20,15 @@ function build(file, outName) {
 // individual tasks
 const cssMain = build('./assets/scss/main.scss', 'style.min.css');
 const cssHome = build('./assets/scss/pages/home.scss', 'home.min.css');
+const cssContact = build('./assets/scss/pages/contact.scss', 'contact.min.css');
 const cssThankYou = build('./assets/scss/pages/thank-you.scss', 'thank-you.min.css');
 
 // group task
 const styles = parallel(
   cssMain,
   cssHome,
-  cssThankYou
+  cssThankYou,
+  cssContact
 );
 
 // watcher

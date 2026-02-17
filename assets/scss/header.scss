@@ -11,6 +11,14 @@ body {
         }
       }
     }
+    &[data-lhe="animated_underline"].transparent.dark-slide {
+      > #top nav > ul > li > a > .sf-sub-indicator [class*=" icon-"] {
+        color: $primary-color !important;
+      }
+      #top nav > ul > li > a .menu-title-text:after {
+        border-color: $primary-color !important;
+      }
+    }
     #top {
       .slide-out-widget-area-toggle {
         padding-right: 3px;

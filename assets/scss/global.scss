@@ -8,6 +8,9 @@ body, html, .testimonial_slider:not([data-style*=multiple_visible]) blockquote, 
   font-family: "Gotham", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
 }
+.clarendon-text-pro {
+  font-family: "clarendon-text-pro", serif;
+}
 h1 {
   font-family:"clarendon-text-pro";
 }
@@ -35,6 +38,8 @@ h2,h3,h4,h5{
 .kicker {
   margin-bottom: 6px !important;
 }
+.light p.kicker,
+.light .kicker p,
 p.kicker,
 .kicker p {
   font-family:"clarendon-text-pro";
@@ -50,12 +55,6 @@ p.kicker,
   @include mobile {
     font-size: 16.915px;
     letter-spacing: 1.438px;
-  }
-}
-.light {
-  p.kicker,
-  .kicker p {
-    color: $white !important;
   }
 }
 .lg-text {

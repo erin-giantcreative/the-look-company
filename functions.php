@@ -16,6 +16,9 @@ function salient_child_enqueue_styles() {
     wp_enqueue_style( 'tlc-contact-style', get_stylesheet_directory_uri() . '/assets/css/contact.min.css', '', $nectar_theme_version );
     wp_enqueue_script( 'tlc-form-js' );
   }
+  if ( is_page('our-companies') ) {
+    wp_enqueue_style( 'tlc-our-companies-style', get_stylesheet_directory_uri() . '/assets/css/our-companies.min.css', '', $nectar_theme_version );
+  }
   if ( is_page('thank-you') ) {
     wp_enqueue_style( 'tlc-homepage-style', get_stylesheet_directory_uri() . '/assets/css/thank-you.min.css', '', $nectar_theme_version );
   }

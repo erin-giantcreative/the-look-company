@@ -33,7 +33,8 @@ const styles = parallel(
   cssThankYou,
   cssContact,
   cssOurCompanies,
-  cssMeetOurTeam
+  cssMeetOurTeam,
+  cssBlog
 );
 
 // watcher

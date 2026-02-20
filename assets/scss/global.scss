@@ -13,6 +13,10 @@ body, html, .testimonial_slider:not([data-style*=multiple_visible]) blockquote, 
 }
 h1 {
   font-family:"clarendon-text-pro";
+  letter-spacing: 1.8px !important;
+  @include desktop {
+    letter-spacing: 3.54px !important;
+  }
 }
 h1, h2 {
   @include mobile {

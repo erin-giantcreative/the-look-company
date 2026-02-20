@@ -23,6 +23,7 @@ const cssHome = build('./assets/scss/pages/home.scss', 'home.min.css');
 const cssContact = build('./assets/scss/pages/contact.scss', 'contact.min.css');
 const cssOurCompanies = build('./assets/scss/pages/our-companies.scss', 'our-companies.min.css');
 const cssMeetOurTeam = build('./assets/scss/pages/meet-our-team.scss', 'meet-our-team.min.css');
+const cssRetailSolutions = build('./assets/scss/pages/retail-solutions.scss', 'retail-solutions.min.css');
 const cssThankYou = build('./assets/scss/pages/thank-you.scss', 'thank-you.min.css');
 const cssBlog = build('./assets/scss/pages/blog.scss', 'blog.min.css');
 
@@ -34,7 +35,8 @@ const styles = parallel(
   cssContact,
   cssOurCompanies,
   cssMeetOurTeam,
-  cssBlog
+  cssBlog,
+  cssRetailSolutions
 );
 
 // watcher

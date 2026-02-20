@@ -25,8 +25,14 @@ function salient_child_enqueue_styles() {
   if ( is_page('thank-you') ) {
     wp_enqueue_style( 'tlc-homepage-style', get_stylesheet_directory_uri() . '/assets/css/thank-you.min.css', '', $nectar_theme_version );
   }
-  if (is_page('blog') || is_single() ) {
+  if (is_page('blog') ||
+  is_single()  ) {
     wp_enqueue_style( 'tlc-blog-style', get_stylesheet_directory_uri() . '/assets/css/blog.min.css', '', $nectar_theme_version );
+  }
+  if (
+  is_category() ||
+  is_tag() ) {
+    wp_enqueue_style( 'tlc-blog-category-style', get_stylesheet_directory_uri() . '/assets/css/blog-category.min.css', '', $nectar_theme_version );
   }
   if ( is_page('book-a-free-tour') ) {
     wp_enqueue_style( 'tlc-forms-style', get_stylesheet_directory_uri() . '/assets/css/book-a-free-tour.min.css', '', $nectar_theme_version );

@@ -199,6 +199,29 @@ div.container-wrap {
   font-size: 24px;
 }
 
+.row.heading-title.hentry {
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 100vw;
+    height: 100%;
+
+    background-image: url("https://res.cloudinary.com/fortyfournorth/image/upload/v1628625584/The%20Look%20Company/TLC-Pattern-OnWhite-BigBG_cyzjam.svg");
+    background-repeat: repeat;
+    background-position: center top;
+
+    z-index: -1;
+  }
+}
+
+
 // Media Queries
 @media screen and (max-width: 999px) {
   .post-area {

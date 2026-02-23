@@ -250,4 +250,11 @@
       }
     }
   }
+  &__case-studies {
+    .vc_col-sm-12 {
+      .flickity-page-dots {
+        bottom: -50px !important;
+      }
+    }
+  }
 }

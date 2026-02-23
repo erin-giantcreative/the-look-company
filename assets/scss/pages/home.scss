@@ -244,6 +244,28 @@
         }
       }
     }
+    .row_col_wrap_12 {
+      .flickity-page-dots {
+        bottom: -50px !important;
+      }
+      @include touch_screen {
+        .pin-right {
+          margin-left: auto !important;
+          margin-right: auto !important;
+          max-width: var(--mobile-container-width);
+        }
+      }
+      @include desktop {
+        align-items: center;
+        justify-content: flex-end;
+        .pin-right {
+          padding-left: 90px !important;
+          margin-left: 0 !important;
+          margin-right: auto !important;
+          max-width: calc(1920px / 2);
+        }
+      }
+    }
   }
   &__products {
     > .row_col_wrap_12 {

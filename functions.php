@@ -22,6 +22,9 @@ function salient_child_enqueue_styles() {
   if ( is_page('retail-solutions') ) {
     wp_enqueue_style( 'tlc-retail-solutions-style', get_stylesheet_directory_uri() . '/assets/css/retail-solutions.min.css', '', $nectar_theme_version );
   }
+  if ( is_page('sports-and-events') ) {
+    wp_enqueue_style( 'tlc-sports-and-events-style', get_stylesheet_directory_uri() . '/assets/css/sports-and-events.min.css', '', $nectar_theme_version );
+  }
   if ( is_page('meet-our-team') ) {
     wp_enqueue_style( 'tlc-meet-our-team-style', get_stylesheet_directory_uri() . '/assets/css/meet-our-team.min.css', '', $nectar_theme_version );
   }

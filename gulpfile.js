@@ -23,23 +23,13 @@ function build(file, outName) {
 const cssMain = build("./assets/scss/main.scss", "style.min.css");
 const cssHome = build("./assets/scss/pages/home.scss", "home.min.css");
 const cssContact = build("./assets/scss/pages/contact.scss", "contact.min.css");
-const cssOurCompanies = build(
-  "./assets/scss/pages/our-companies.scss",
-  "our-companies.min.css",
-);
-const cssMeetOurTeam = build(
-  "./assets/scss/pages/meet-our-team.scss",
-  "meet-our-team.min.css",
-);
-const cssThankYou = build(
-  "./assets/scss/pages/thank-you.scss",
-  "thank-you.min.css",
-);
+const cssOurCompanies = build("./assets/scss/pages/our-companies.scss", "our-companies.min.css");
+const cssMeetOurTeam = build("./assets/scss/pages/meet-our-team.scss", "meet-our-team.min.css");
+const cssSportsAndEvents = build('./assets/scss/pages/sports-and-events.scss', 'sports-and-events.min.css');
+const cssRetailSolutions = build('./assets/scss/pages/retail-solutions.scss', 'retail-solutions.min.css');
+const cssThankYou = build("./assets/scss/pages/thank-you.scss", "thank-you.min.css");
 const cssBlog = build("./assets/scss/pages/blog.scss", "blog.min.css");
-const cssBlogCategory = build(
-  "./assets/scss/pages/blog-category.scss",
-  "blog-category.min.css",
-);
+const cssBlogCategory = build( "./assets/scss/pages/blog-category.scss", "blog-category.min.css");
 
 // group task
 const styles = parallel(
@@ -51,6 +41,8 @@ const styles = parallel(
   cssMeetOurTeam,
   cssBlog,
   cssBlogCategory,
+  cssSportsAndEvents,
+  cssRetailSolutions
 );
 
 // watcher

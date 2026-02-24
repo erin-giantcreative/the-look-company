@@ -1,3 +1,98 @@
+@import '../variables';
+@import '../mixin';
+
+.blog {
+  &__hero {
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      flex-direction: column;
+      > .row_col_wrap_12 {
+        margin-top: 54px !important;
+        @include sm_desktop {
+          margin-top: 67px !important;
+        }
+        @include lg_desktop {
+          margin-top: 80px !important;
+        }
+      }
+    > .row-bg-wrap {
+      .inner-wrap {
+        .row-bg:after {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(180deg, rgb(12 13 14 / 50%) 0%, rgba(12, 13, 14, .5) 100%),
+                      linear-gradient(0deg, rgb(12 13 14 / 90%) .18%, rgba(12, 13, 14, 0) 85%);
+          @include desktop {
+            background: linear-gradient(180deg, rgb(12 13 14 / 90%) 0%, rgba(12, 13, 14, 0) 50%),
+                        linear-gradient(90deg, rgb(12 13 14 / 90%) .18%, rgba(12, 13, 14, 0) 85%);
+          }
+        }
+      }
+    }
+    h1 {
+      color: $white;
+      @include mobile {
+        margin-bottom: -12px !important;
+      }
+      @include tablet {
+        margin-bottom: -18px !important;
+      }
+      @include sm_desktop {
+        padding-top: 8px;
+        line-height: 53px;
+      }
+      @include lg_desktop {
+        padding-top: 10px;
+        line-height: 65px;
+      }
+    }
+    .hero-text {
+      font-size: 16px;
+      line-height: 1.59;
+      @include tablet {
+        font-size: 18px;
+      }
+      @include desktop {
+        font-size: 24px;
+      }
+    }
+  }
+}
+body.blog,
+body[data-bg-header="true"].blog {
+  .container-wrap:first-child {
+    padding-top: 0px !important;
+  }
+  .container-wrap:not(:first-child) {
+    padding: 40px 0 !important;
+    @include tablet {
+      padding: 50px 0 !important;
+    }
+    @include desktop {
+      padding: 96px 0 !important;
+    }
+    @include xl_desktop {
+      padding: 120px 0  !important;
+    }
+  }
+}
+.scf-blog-filter-ui {
+  &__buttons {
+    color: $white !important;
+    button {
+      color: $white !important;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.82;
+      letter-spacing: 0.825px;
+      &.is-active {
+        color: $primary-color !important;
+      }
+    }
+  }
+}
 .post-excerpt {
   margin-bottom: 40px;
 }
@@ -136,12 +231,6 @@
   }
 }
 
-.heading-title {
-  h1.entry-title {
-    max-width: 900px;
-  }
-}
-
 #BlogContent {
   margin-bottom: 15px;
 }
@@ -175,10 +264,6 @@ div.container-wrap {
   }
 }
 
-.no-padding {
-  padding: 0px;
-}
-
 .blog-hero-heading {
   padding-left: 20px;
   border-left: 2.2px solid #e31937 !important;
@@ -193,32 +278,6 @@ div.container-wrap {
 
 .fit-content-class {
   width: fit-content;
-}
-
-.hero-p {
-  font-size: 24px;
-}
-
-.row.heading-title.hentry {
-  position: relative;
-  z-index: 1;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-
-    width: 100vw;
-    height: 100%;
-
-    background-image: url("https://res.cloudinary.com/fortyfournorth/image/upload/v1628625584/The%20Look%20Company/TLC-Pattern-OnWhite-BigBG_cyzjam.svg");
-    background-repeat: repeat;
-    background-position: center top;
-
-    z-index: -1;
-  }
 }
 
 
@@ -263,15 +322,9 @@ div.container-wrap {
  .single .heading-title[data-header-style="default_minimal"] .meta-category a {
   font-size: 13px !important;
 }
-
-
   .blog-hero-heading {
     padding-left: 0px;
     border-left: 0px solid #e31937 !important;
-  }
-
-  .hero-p {
-    font-size: 18px !important;
   }
 }
 
@@ -320,5 +373,4 @@ div.container-wrap {
       }
     }
   }
-
 }

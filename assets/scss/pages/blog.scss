@@ -93,6 +93,71 @@ body[data-bg-header="true"].blog {
     }
   }
 }
+
+
+
+
+
+
+
+
+
+
+body.wp-singular.single.single-post {
+  .container-wrap {
+    padding-top: 0 !important;
+    .container.main-content {
+      padding-top: 54px !important;
+      @include sm_desktop {
+        padding-top: 67px !important;
+      }
+      @include lg_desktop {
+        padding-top: 80px !important;
+      }
+      &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        max-height: 850px;
+        background: linear-gradient(180deg, rgba(12,13,14,.2) 0%, rgba(12,13,14,0) 80px),
+                    url("/wp-content/uploads/2026/02/bg-texture.svg");
+                    z-index: -1;
+      }
+      .row.heading-title.hentry {
+        padding: 40px 0 !important;
+        @include tablet {
+          padding: 50px 0 !important;
+        }
+        @include desktop {
+          padding: 96px 0 !important;
+        }
+        .col.span_12.section-title.blog-title {
+          .meta-top {}
+
+          h1.entry-title {}
+
+          .post-featured-image {
+            padding-top: 40px !important;
+            @include tablet {
+              padding-top: 50px !important;
+            }
+            @include desktop {
+              padding-top: 96px !important;
+            }
+            @include xl_desktop {
+              padding-top: 120px !important;
+            }
+            img {
+              width: 100%
+            }
+          }
+        }
+      }
+    }
+  }
+}
 .post-excerpt {
   margin-bottom: 40px;
 }
@@ -235,18 +300,6 @@ body[data-bg-header="true"].blog {
   margin-bottom: 15px;
 }
 
-div.container-wrap {
-  > div {
-    > div.row.heading-title.hentry {
-      > div {
-        > span {
-          padding-left: 0px !important;
-        }
-      }
-    }
-  }
-}
-
 #block-9.widget {
   margin-bottom: 10px !important;
 }
@@ -353,13 +406,9 @@ div.container-wrap {
       border-radius: 10px;
     }
   }
-
-    div.container-wrap > div > div.row.heading-title[data-header-style=default_minimal].hentry {
-  padding-top: 80px !important;
-}
-.post-excerpt {
-  margin-bottom: 60px;
-}
+  .post-excerpt {
+    margin-bottom: 60px;
+  }
 }
 
 @media screen and (min-width: 1280px) {

@@ -31,7 +31,7 @@ function salient_child_enqueue_styles() {
   if ( is_page('thank-you') ) {
     wp_enqueue_style( 'tlc-homepage-style', get_stylesheet_directory_uri() . '/assets/css/thank-you.min.css', '', $nectar_theme_version );
   }
-  if ( is_home() || is_single()) {
+  if ( is_home() || is_single() ) {
     wp_enqueue_style( 'tlc-blog-style', get_stylesheet_directory_uri() . '/assets/css/blog.min.css', '', $nectar_theme_version );
   }
   if (is_category() || is_tag()) {
@@ -53,11 +53,17 @@ function salient_child_enqueue_styles() {
  * @return bool        Updated decision.
  */
 add_filter('nectar_activate_transparent_header', function($active) {
-    if (is_home()) {
-        return true;
-    }
-    return $active;
+  if ( is_home() || is_single() ) {
+    return true;
+  }
+  return $active;
 });
+add_filter('get_post_metadata', function($value, $object_id, $meta_key, $single) {
+  if (!is_admin() && is_single() && $meta_key === '_force_transparent_header_color') {
+    return $single ? 'dark' : array('dark');
+  }
+  return $value;
+}, 10, 4);
 add_action('nectar_hook_after_outer_wrap_open', function () {
   if (is_home()) {
     echo '<div class="container-wrap" style="padding-top: 0px; padding-bottom: 0px;"><div class="container main-content" role="header"><div class="row">' . do_shortcode('[nectar_global_section id="484"]') . '</div></div></div>';

@@ -28,6 +28,9 @@ function salient_child_enqueue_styles() {
   if ( is_page('meet-our-team') ) {
     wp_enqueue_style( 'tlc-meet-our-team-style', get_stylesheet_directory_uri() . '/assets/css/meet-our-team.min.css', '', $nectar_theme_version );
   }
+  if ( is_page('faq') ) {
+    wp_enqueue_style( 'tlc-faq-style', get_stylesheet_directory_uri() . '/assets/css/faq.min.css', '', $nectar_theme_version );
+  }
   if ( is_page('thank-you') ) {
     wp_enqueue_style( 'tlc-homepage-style', get_stylesheet_directory_uri() . '/assets/css/thank-you.min.css', '', $nectar_theme_version );
   }

@@ -31,6 +31,7 @@ const cssThankYou = build("./assets/scss/pages/thank-you.scss", "thank-you.min.c
 const cssBlog = build("./assets/scss/pages/blog.scss", "blog.min.css");
 const cssBlogCategory = build( "./assets/scss/pages/blog-category.scss", "blog-category.min.css");
 const cssFaq = build("./assets/scss/pages/faq.scss", "faq.min.css");
+const cssOurWork = build("./assets/scss/pages/our-work.scss", "our-work.min.css");
 
 // group task
 const styles = parallel(
@@ -44,7 +45,8 @@ const styles = parallel(
   cssBlogCategory,
   cssSportsAndEvents,
   cssRetailSolutions,
-  cssFaq
+  cssFaq,
+  cssOurWork
 );
 
 // watcher

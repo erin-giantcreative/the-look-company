@@ -34,6 +34,7 @@ const cssFaq = build("./assets/scss/pages/faq.scss", "faq.min.css");
 const cssOurWork = build("./assets/scss/pages/our-work.scss", "our-work.min.css");
 const cssVideos = build("./assets/scss/pages/videos.scss", "videos.min.css");
 const cssGuides = build("./assets/scss/pages/guides.scss", "guides.min.css");
+const cssBrandActivations = build("./assets/scss/pages/brand-activations.scss", "brand-activations.min.css");
 
 // group task
 const styles = parallel(
@@ -50,7 +51,8 @@ const styles = parallel(
   cssFaq,
   cssOurWork,
   cssVideos,
-  cssGuides
+  cssGuides,
+  cssBrandActivations
 );
 
 // watcher

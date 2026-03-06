@@ -38,6 +38,7 @@ const cssBrandActivations = build("./assets/scss/pages/brand-activations.scss", 
 const cssTheLookGroup = build("./assets/scss/pages/the-look-group.scss", "the-look-group.min.css");
 const cssCareers = build("./assets/scss/pages/careers.scss", "careers.min.css");
 const cssLightboxes = build("./assets/scss/pages/lightboxes.scss", "lightboxes.min.css");
+const cssFabricAndFrames = build("./assets/scss/pages/fabric-and-frames.scss", "fabric-and-frames.min.css");
 
 // group task
 const styles = parallel(
@@ -58,7 +59,8 @@ const styles = parallel(
   cssBrandActivations,
   cssTheLookGroup,
   cssCareers,
-  cssLightboxes
+  cssLightboxes,
+  cssFabricAndFrames
 );
 
 // watcher

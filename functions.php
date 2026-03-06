@@ -53,6 +53,9 @@ function salient_child_enqueue_styles() {
   if ( is_page('lightboxes') ) {
     wp_enqueue_style( 'tlc-lightboxes-style', get_stylesheet_directory_uri() . '/assets/css/lightboxes.min.css', '', $nectar_theme_version );
   }
+  if( is_page('fabric-and-frames') ) {
+    wp_enqueue_style( 'tlc-fabric-and-frames-style', get_stylesheet_directory_uri() . '/assets/css/fabric-and-frames.min.css', '', $nectar_theme_version );
+  }
   if ( is_page('thank-you') ) {
     wp_enqueue_style( 'tlc-thank-you-style', get_stylesheet_directory_uri() . '/assets/css/thank-you.min.css', '', $nectar_theme_version );
   }
@@ -186,3 +189,56 @@ add_action('template_redirect', function (): void {
     }
 
 }, 10);
+/**
+ * Set the featured image for gallery-items posts using the ACF "image" field.
+ *
+ * The ACF field returns an Image Array, so the attachment ID is extracted
+ * from the array and assigned as the post thumbnail.
+ *
+ * Runs after ACF saves the field values.
+ *
+ * Post Type: gallery-items
+ * ACF Field: image
+ *
+ * @param int|string $post_id The ID of the post being saved.
+ * @return void
+ */
+add_action('acf/save_post', 'set_gallery_item_featured_image_from_acf', 20);
+
+function set_gallery_item_featured_image_from_acf($post_id) {
+
+    // Ignore non-post saves such as ACF options pages
+    if (!is_numeric($post_id)) {
+        return;
+    }
+
+    // Only run for the gallery-items custom post type
+    if (get_post_type($post_id) !== 'gallery-items') {
+        return;
+    }
+
+    // Prevent execution during autosave
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+        return;
+    }
+
+    // Skip post revisions
+    if (wp_is_post_revision($post_id)) {
+        return;
+    }
+
+    // Do not overwrite an existing featured image
+    if (has_post_thumbnail($post_id)) {
+        return;
+    }
+
+    // Get the ACF image field (returns an array)
+    $image = get_field('image', $post_id);
+
+    // If the field contains a valid image array with an attachment ID
+    if (!empty($image) && is_array($image) && !empty($image['ID'])) {
+
+        // Set the featured image using the attachment ID
+        set_post_thumbnail($post_id, $image['ID']);
+    }
+}

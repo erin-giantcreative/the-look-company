@@ -222,27 +222,24 @@
             background-size: contain !important;
             background-position: left center !important;
             background-repeat: no-repeat !important;
-            @include lg_desktop {
-              background-size: 50% !important;
-            }
           }
         }
       }
     }
     h2 {
       font-family: clarendon-text-pro, serif;
-      font-weight: 600;
-      line-height: 1.5;
-      letter-spacing: .025em;
+      font-weight: 600 !important;
+      line-height: 1.4 !important;
+      letter-spacing: 0.8px;
       font-size: 24px !important;
       span {
         color: $brand-yellow;
       }
       @include sm_desktop {
-        font-size: 32px;
+        font-size: 32px !important;
       }
       @include lg_desktop {
-        font-size: 40px;
+        font-size: 40px !important;
       }
     }
   }

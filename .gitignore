@@ -33,3 +33,9 @@ public/assets/
 # cPanel backups
 backup-*/
 tmp/
+
+# Dev artifacts
+baseline.md
+
+# Ralph Loop state (local only, never commit)
+.claude/ralph-loop.local.md

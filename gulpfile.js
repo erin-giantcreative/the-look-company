@@ -92,6 +92,7 @@ const cssEntries = [
   ["./assets/scss/pages/display-systems.scss",  "display-systems.min.css"],
   ["./assets/scss/pages/signs-and-banners.scss","signs-and-banners.min.css"],
   ["./assets/scss/pages/services.scss",         "services.min.css"],
+  ["./assets/scss/pages/case-studies.scss",        "case-studies.min.css"],
 ];
 
 const stylesBuild = parallel(...cssEntries.map(([file, out]) => buildCSS(file, out, false)));

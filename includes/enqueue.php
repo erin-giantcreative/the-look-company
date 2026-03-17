@@ -31,13 +31,17 @@ function salient_child_enqueue_styles() {
     }
   }
 
+  if ( is_singular( 'case-study' ) ) {
+    wp_enqueue_style( 'tlc-case-study-style', get_stylesheet_directory_uri() . '/assets/css/case-studies.min.css', array(), $v );
+  }
+
   // Video taxonomy archive.
   if ( is_tax( 'video-category' ) ) {
     wp_enqueue_style( 'tlc-videos-style', get_stylesheet_directory_uri() . '/assets/css/videos.min.css', array(), $v );
   }
 
   // Blog index and single posts.
-  if ( is_home() || is_single() ) {
+  if ( is_home() || is_single( 'post' ) ) {
     wp_enqueue_style( 'tlc-blog-style', get_stylesheet_directory_uri() . '/assets/css/blog.min.css', array(), $v );
   }
 

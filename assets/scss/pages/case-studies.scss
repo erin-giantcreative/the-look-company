@@ -4,6 +4,7 @@
 [class*="case-studies__"] {
   .row_col_wrap_12 {
     @include touch_screen {
+      .pin-left,
       .pin-right {
         margin-left: auto !important;
         margin-right: auto !important;
@@ -13,6 +14,12 @@
     @include desktop {
       .pin-right {
         padding-left: 90px !important;
+        margin-left: 0 !important;
+        margin-right: auto !important;
+        max-width: calc(1920px / 2);
+      }
+      .pin-left {
+        padding-right: 90px !important;
         margin-left: 0 !important;
         margin-right: auto !important;
         max-width: calc(1920px / 2);
@@ -62,6 +69,37 @@
       }
     }
   }
+  .video-col {
+    .wpb_wrapper {
+      height: 100%;
+      position: relative;
+      .nectar_video_lightbox.play_button {
+        margin: 0 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        &:before {
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 190px;
+          height: 190px;
+          border-width: 12px;
+          border-color: $white;
+          box-shadow: 0px 0px 20px 7px rgb(55 55 55 / 60%);
+        }
+        svg {
+          width: 48px;
+          height: 48px;
+          path {
+            fill: $white;
+          }
+        }
+      }
+    }
+  }
   .center {
     .underlined-title h2 {
       &:after {
@@ -82,8 +120,24 @@
       }
     }
   }
+  @include tablet {
+    .row_col_wrap_12_inner {
+      .flex_layout_desktop_row {
+        > .vc_column-inner {
+          > .wpb_wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px 32px;
+            justify-content: start;
+            align-items: start;
+            justify-items: start;
+          }
+        }
+      }
+    }
+  }
 
-  @include desktop {
+  @include lg_desktop {
     .row_col_wrap_12_inner {
       .flex_layout_desktop_row {
         > .vc_column-inner {
@@ -310,13 +364,46 @@
   }
   &__gallery {
     .portfolio-wrap {
-      .work-item {
-        border-radius: 20px;
-        overflow: hidden;
-        img {
-          min-width: 100% !important;
-          max-width: none !important;
-          width: auto !important;
+      .col.elastic-portfolio-item {
+        .inner-wrap {
+          border-radius: 20px;
+          overflow: hidden;
+          height: 320px;
+          @include mobile {
+            height: 280px;
+          }
+          @include sm_desktop {
+            height: 380px;
+          }
+          @include lg_desktop {
+            height: 480px;
+          }
+          .work-item {
+            width: 100%;
+            height: 100%;
+            .work-info-bg {
+              opacity: 0 !important;
+            }
+            img {
+              display: block;
+              min-width: 100% !important;
+              max-width: none !important;
+              width: auto !important;
+              height: 100% !important;
+              object-fit: cover;
+              object-position: center center;
+              position: absolute;
+              top: 0;
+              left: 0;
+            }
+          }
+        }
+      }
+    }
+    &.wide-gallery {
+      .portfolio-wrap {
+        .col.elastic-portfolio-item.wide {
+          width: calc(50% - 10px) !important;
         }
       }
     }

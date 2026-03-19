@@ -365,19 +365,38 @@
   &__gallery {
     .portfolio-wrap {
       .col.elastic-portfolio-item {
+        &:not(.wide_tall):not(.tall) {
+          .inner-wrap {
+            height: 320px;
+            @include mobile {
+              height: 280px;
+            }
+            @include sm_desktop {
+              height: 380px;
+            }
+            @include lg_desktop {
+              height: 480px;
+            }
+          }
+        }
+        &.wide_tall,
+        &.tall {
+          .inner-wrap {
+            height: 320px;
+            @include mobile {
+              height: 300px;
+            }
+            @include sm_desktop {
+              height: 780px;
+            }
+            @include lg_desktop {
+              height: 980px;
+            }
+          }
+        }
         .inner-wrap {
           border-radius: 20px;
           overflow: hidden;
-          height: 320px;
-          @include mobile {
-            height: 280px;
-          }
-          @include sm_desktop {
-            height: 380px;
-          }
-          @include lg_desktop {
-            height: 480px;
-          }
           .work-item {
             width: 100%;
             height: 100%;
@@ -414,6 +433,64 @@
         .row-bg {
           .row-bg-img {
             object-fit: contain;
+          }
+        }
+      }
+    }
+  }
+  &__our-history {
+    .flickity-viewport {
+      margin-top: 48px !important;
+      .cell {
+        > .inner-wrap-outer {
+          margin: 0 5px;
+          border-radius: 13px;
+          border: 3px solid $brand-teal;
+          background: $secondary-color;
+          h3 {
+            font-size: 28px;
+            line-height: 1.2;
+            span {
+              font-weight: 600;
+            }
+          }
+          p {
+            line-height: 1.8;
+            font-size: 16px;
+            a {
+              color: $primary-color !important;
+              &:hover {
+                color: $brand-teal !important;
+              }
+            }
+          }
+          @include desktop {
+            margin: 0 10px;
+            border-radius: 40px;
+            border: 5px solid $brand-teal;
+            h3 {
+              font-size: 34px;
+            }
+            p {
+              font-size: 18px;
+            }
+          }
+        }
+        &:nth-child(6n+5),
+        &:nth-child(6n+2){
+          > .inner-wrap-outer {
+            border-color: $brand-red;
+          }
+        }
+        &:nth-child(6n+6),
+        &:nth-child(6n+3){
+          > .inner-wrap-outer {
+            border-color: $brand-yellow;
+          }
+        }
+        &:nth-child(6n+4){
+          > .inner-wrap-outer {
+            border-color: $brand-blue;
           }
         }
       }

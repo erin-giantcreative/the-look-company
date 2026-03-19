@@ -276,25 +276,45 @@
     font-size: 40px !important;
   }
 }
-.case-studies__gallery .portfolio-wrap .col.elastic-portfolio-item .inner-wrap {
-  border-radius: 20px;
-  overflow: hidden;
+.case-studies__gallery .portfolio-wrap .col.elastic-portfolio-item:not(.wide_tall):not(.tall) .inner-wrap {
   height: 320px;
 }
 @media (max-width: 689px) {
-  .case-studies__gallery .portfolio-wrap .col.elastic-portfolio-item .inner-wrap {
+  .case-studies__gallery .portfolio-wrap .col.elastic-portfolio-item:not(.wide_tall):not(.tall) .inner-wrap {
     height: 280px;
   }
 }
 @media (min-width: 1000px) and (max-width: 1299px) {
-  .case-studies__gallery .portfolio-wrap .col.elastic-portfolio-item .inner-wrap {
+  .case-studies__gallery .portfolio-wrap .col.elastic-portfolio-item:not(.wide_tall):not(.tall) .inner-wrap {
     height: 380px;
   }
 }
 @media (min-width: 1300px) {
-  .case-studies__gallery .portfolio-wrap .col.elastic-portfolio-item .inner-wrap {
+  .case-studies__gallery .portfolio-wrap .col.elastic-portfolio-item:not(.wide_tall):not(.tall) .inner-wrap {
     height: 480px;
   }
+}
+.case-studies__gallery .portfolio-wrap .col.elastic-portfolio-item.wide_tall .inner-wrap, .case-studies__gallery .portfolio-wrap .col.elastic-portfolio-item.tall .inner-wrap {
+  height: 320px;
+}
+@media (max-width: 689px) {
+  .case-studies__gallery .portfolio-wrap .col.elastic-portfolio-item.wide_tall .inner-wrap, .case-studies__gallery .portfolio-wrap .col.elastic-portfolio-item.tall .inner-wrap {
+    height: 300px;
+  }
+}
+@media (min-width: 1000px) and (max-width: 1299px) {
+  .case-studies__gallery .portfolio-wrap .col.elastic-portfolio-item.wide_tall .inner-wrap, .case-studies__gallery .portfolio-wrap .col.elastic-portfolio-item.tall .inner-wrap {
+    height: 780px;
+  }
+}
+@media (min-width: 1300px) {
+  .case-studies__gallery .portfolio-wrap .col.elastic-portfolio-item.wide_tall .inner-wrap, .case-studies__gallery .portfolio-wrap .col.elastic-portfolio-item.tall .inner-wrap {
+    height: 980px;
+  }
+}
+.case-studies__gallery .portfolio-wrap .col.elastic-portfolio-item .inner-wrap {
+  border-radius: 20px;
+  overflow: hidden;
 }
 .case-studies__gallery .portfolio-wrap .col.elastic-portfolio-item .inner-wrap .work-item {
   width: 100%;
@@ -323,5 +343,53 @@
 .case-studies__text-center > .row-bg-wrap .inner-wrap .row-bg .row-bg-img {
   -o-object-fit: contain;
      object-fit: contain;
+}
+.case-studies__our-history .flickity-viewport {
+  margin-top: 48px !important;
+}
+.case-studies__our-history .flickity-viewport .cell > .inner-wrap-outer {
+  margin: 0 5px;
+  border-radius: 13px;
+  border: 3px solid #53A8A8;
+  background: #0C0D0E;
+}
+.case-studies__our-history .flickity-viewport .cell > .inner-wrap-outer h3 {
+  font-size: 28px;
+  line-height: 1.2;
+}
+.case-studies__our-history .flickity-viewport .cell > .inner-wrap-outer h3 span {
+  font-weight: 600;
+}
+.case-studies__our-history .flickity-viewport .cell > .inner-wrap-outer p {
+  line-height: 1.8;
+  font-size: 16px;
+}
+.case-studies__our-history .flickity-viewport .cell > .inner-wrap-outer p a {
+  color: #E31937 !important;
+}
+.case-studies__our-history .flickity-viewport .cell > .inner-wrap-outer p a:hover {
+  color: #53A8A8 !important;
+}
+@media (min-width: 1000px) {
+  .case-studies__our-history .flickity-viewport .cell > .inner-wrap-outer {
+    margin: 0 10px;
+    border-radius: 40px;
+    border: 5px solid #53A8A8;
+  }
+  .case-studies__our-history .flickity-viewport .cell > .inner-wrap-outer h3 {
+    font-size: 34px;
+  }
+  .case-studies__our-history .flickity-viewport .cell > .inner-wrap-outer p {
+    font-size: 18px;
+  }
+}
+.case-studies__our-history .flickity-viewport .cell:nth-child(6n+5) > .inner-wrap-outer, .case-studies__our-history .flickity-viewport .cell:nth-child(6n+2) > .inner-wrap-outer {
+  border-color: #E31937;
+}
+.case-studies__our-history .flickity-viewport .cell:nth-child(6n+6) > .inner-wrap-outer, .case-studies__our-history .flickity-viewport .cell:nth-child(6n+3) > .inner-wrap-outer {
+  border-color: #F2B844;
+}
+.case-studies__our-history .flickity-viewport .cell:nth-child(6n+4) > .inner-wrap-outer {
+  border-color: #467583;
 }
 /*# sourceMappingURL=case-studies.min.css.map */

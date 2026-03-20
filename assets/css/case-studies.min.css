@@ -106,6 +106,11 @@
     justify-items: start;
   }
 }
+[class*=case-studies__] .iwithtext h3 {
+  font-family: "clarendon-text-pro", serif;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
 
 .case-studies__hero {
   display: flex;
@@ -245,10 +250,16 @@
   .case-studies__image-left .column-image-bg-wrap {
     border-radius: 0 24px 24px 0;
   }
+  .case-studies__image-left .vc_col-sm-3 .column-image-bg-wrap {
+    border-radius: 24px;
+  }
 }
 @media (min-width: 1000px) {
   .case-studies__image-right .column-image-bg-wrap {
     border-radius: 24px 0 0 24px;
+  }
+  .case-studies__image-right .vc_col-sm-3 .column-image-bg-wrap {
+    border-radius: 24px;
   }
 }
 .case-studies__testimonial .vc_column-inner .column-bg-layer .inner-wrap .column-image-bg {
@@ -337,8 +348,11 @@
   top: 0;
   left: 0;
 }
-.case-studies__gallery.wide-gallery .portfolio-wrap .col.elastic-portfolio-item.wide {
+.case-studies__gallery.wide-gallery .portfolio-wrap .portfolio-items .col.wide {
   width: calc(50% - 10px) !important;
+}
+.case-studies__gallery.wide-gallery .portfolio-wrap .portfolio-items .col.regular {
+  width: calc(33.33% - 7px) !important;
 }
 .case-studies__text-center > .row-bg-wrap .inner-wrap .row-bg .row-bg-img {
   -o-object-fit: contain;

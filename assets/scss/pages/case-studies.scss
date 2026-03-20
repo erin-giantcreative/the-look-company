@@ -136,7 +136,6 @@
       }
     }
   }
-
   @include lg_desktop {
     .row_col_wrap_12_inner {
       .flex_layout_desktop_row {
@@ -151,6 +150,13 @@
           }
         }
       }
+    }
+  }
+  .iwithtext {
+    h3 {
+      font-family: $font-display;
+      font-size: 0.9rem;
+      line-height: 1.6;
     }
   }
 }
@@ -324,12 +330,22 @@
       .column-image-bg-wrap {
         border-radius: 0 24px 24px 0;
       }
+      .vc_col-sm-3 {
+        .column-image-bg-wrap {
+          border-radius: 24px;
+        }
+      }
     }
   }
   &__image-right {
     @include desktop {
       .column-image-bg-wrap {
         border-radius: 24px 0 0 24px;
+      }
+      .vc_col-sm-3 {
+        .column-image-bg-wrap {
+          border-radius: 24px;
+        }
       }
     }
   }
@@ -421,8 +437,13 @@
     }
     &.wide-gallery {
       .portfolio-wrap {
-        .col.elastic-portfolio-item.wide {
-          width: calc(50% - 10px) !important;
+        .portfolio-items {
+          .col.wide {
+            width: calc(50% - 10px) !important;
+          }
+          .col.regular {
+            width: calc(33.33% - 7px) !important;
+          }
         }
       }
     }

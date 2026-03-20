@@ -41,7 +41,7 @@ function salient_child_enqueue_styles() {
   }
 
   // Blog index and single posts.
-  if ( is_home() || is_single( 'post' ) ) {
+  if ( is_home() || is_singular( 'post' ) ) {
     wp_enqueue_style( 'tlc-blog-style', get_stylesheet_directory_uri() . '/assets/css/blog.min.css', array(), $v );
   }
 

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .blog__hero {
   display: flex;
   align-items: stretch;
@@ -342,5 +343,43 @@ body.wp-singular.single.single-post .container-wrap .container.main-content .row
     max-width: 1400px;
     font-size: 70px !important;
   }
+}
+/* ─────────────────────────────────────────────────────────────────────────────
+ // Dark transparent header on single blog posts
+ //
+ // Salient adds "dark-slide" to #header-outer via JS (midnight feature), but
+ // there is no PHP hook to set it server-side without overriding header.php.
+ // WordPress already adds body.single-post server-side, so we use that as the
+ // hook — pure CSS, no JS, no flash.
+ //
+ // These rules mirror what Salient's .dark-slide class does in custom.php and
+ // header-perma-transparent.css: dark nav text, dark hamburger, dark logo version.
+ ───────────────────────────────────────────────────────────────────────────── */
+body.single-post #header-outer.transparent #top nav > ul > li > a,
+body.single-post #header-outer.transparent #top nav > .sf-menu > li > a,
+body.single-post #header-outer.transparent .slide-out-widget-area-toggle a i.label,
+body.single-post #header-outer.transparent #top .span_9 > .slide-out-widget-area-toggle a.using-label .label,
+body.single-post #header-outer.transparent #top nav ul #search-btn a .icon-salient-search,
+body.single-post #header-outer.transparent #top nav ul #nectar-user-account a span,
+body.single-post #header-outer.transparent #top nav > ul > li > a > .sf-sub-indicator i,
+body.single-post #header-outer.transparent .cart-menu .cart-icon-wrap .icon-salient-cart,
+body.single-post #header-outer.transparent #top .sf-menu > li.nectar-regular-menu-item > a > .nectar-menu-icon,
+body.single-post #header-outer.transparent .nectar-header-text-content,
+body.single-post #header-outer.transparent .nectar-mobile-only.mobile-header li:not([class*=menu-item-btn-style]) a {
+  color: #221F20 !important;
+}
+body.single-post #header-outer.transparent > #top .span_9 > .slide-out-widget-area-toggle .lines-button:after, body.single-post #header-outer.transparent > #top .span_9 > .slide-out-widget-area-toggle .lines:before, body.single-post #header-outer.transparent > #top .span_9 > .slide-out-widget-area-toggle .lines:after {
+  background-color: #221F20 !important;
+}
+body.single-post #header-outer.transparent #top #mobile-cart-link i,
+body.single-post #header-outer.transparent .mobile-search .icon-salient-search,
+body.single-post #header-outer.transparent .mobile-user-account .icon-salient-m-user {
+  color: #221F20 !important;
+}
+body.single-post #header-outer.transparent[data-transparent-header=true] #logo img:not(.dark-version) {
+  opacity: 0 !important;
+}
+body.single-post #header-outer.transparent[data-transparent-header=true] #logo img.dark-version {
+  opacity: 1 !important;
 }
 /*# sourceMappingURL=blog.min.css.map */

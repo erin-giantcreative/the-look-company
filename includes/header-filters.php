@@ -26,19 +26,6 @@ add_action( 'wp_head', function () {
 }, 1 );
 
 /**
- * Force dark header colour on single posts via an inline style.
- *
- * Outputs a small <style> block in wp_head rather than filtering every
- * metadata read, which is significantly cheaper.
- */
-add_action( 'wp_head', function () {
-  if ( ! is_single() ) {
-    return;
-  }
-  echo '<style>#header-outer.transparent { --nectar-header-color: dark; }</style>' . "\n";
-} );
-
-/**
  * Inject global section banner after outer wrap open on the blog index.
  *
  * NOTE: The ID 484 is a hardcoded Nectar Global Section post ID.

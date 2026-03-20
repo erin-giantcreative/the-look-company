@@ -423,3 +423,49 @@ body.wp-singular.single.single-post {
     }
   }
 }
+/* ─────────────────────────────────────────────────────────────────────────────
+ // Dark transparent header on single blog posts
+ //
+ // Salient adds "dark-slide" to #header-outer via JS (midnight feature), but
+ // there is no PHP hook to set it server-side without overriding header.php.
+ // WordPress already adds body.single-post server-side, so we use that as the
+ // hook — pure CSS, no JS, no flash.
+ //
+ // These rules mirror what Salient's .dark-slide class does in custom.php and
+ // header-perma-transparent.css: dark nav text, dark hamburger, dark logo version.
+ ───────────────────────────────────────────────────────────────────────────── */
+body.single-post #header-outer.transparent {
+  // Desktop & mobile nav link text
+  #top nav > ul > li > a,
+  #top nav > .sf-menu > li > a,
+  .slide-out-widget-area-toggle a i.label,
+  #top .span_9 > .slide-out-widget-area-toggle a.using-label .label,
+  #top nav ul #search-btn a .icon-salient-search,
+  #top nav ul #nectar-user-account a span,
+  #top nav > ul > li > a > .sf-sub-indicator i,
+  .cart-menu .cart-icon-wrap .icon-salient-cart,
+  #top .sf-menu > li.nectar-regular-menu-item > a > .nectar-menu-icon,
+  .nectar-header-text-content,
+  .nectar-mobile-only.mobile-header li:not([class*="menu-item-btn-style"]) a {
+    color: $brand-dark !important;
+  }
+
+  // Hamburger / slide-out menu button lines
+  & > #top .span_9 > .slide-out-widget-area-toggle .lines-button:after,
+  & > #top .span_9 > .slide-out-widget-area-toggle .lines:before,
+  & > #top .span_9 > .slide-out-widget-area-toggle .lines:after {
+    background-color: $brand-dark !important;
+  }
+
+  // Mobile cart / search / account icons
+  #top #mobile-cart-link i,
+  .mobile-search .icon-salient-search,
+  .mobile-user-account .icon-salient-m-user {
+    color: $brand-dark !important;
+  }
+  // Logo: show dark-version, hide light/starting logo
+  &[data-transparent-header="true"] #logo {
+    img:not(.dark-version) { opacity: 0 !important; }
+    img.dark-version       { opacity: 1 !important; }
+  }
+}

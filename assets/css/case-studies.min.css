@@ -406,4 +406,154 @@
 .case-studies__our-history .flickity-viewport .cell:nth-child(6n+4) > .inner-wrap-outer {
   border-color: #467583;
 }
+.case-studies__library .scsl__filters {
+  position: relative;
+  background: #0C0D0E;
+  padding: 12px 24px;
+  display: flex;
+  gap: 12px;
+}
+.case-studies__library .scsl__filters .scsl__filter-btn {
+  color: #FFF;
+  font-weight: 700;
+  font-size: 18px;
+  display: inline-block;
+  line-height: 1.5;
+  border-radius: 0 !important;
+  position: relative;
+}
+.case-studies__library .scsl__filters .scsl__filter-btn.scsl__filter-btn--active {
+  color: #53A8A8 !important;
+}
+.case-studies__library .scsl__filters .scsl__filter-btn.scsl__filter-btn--active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0 auto;
+  width: 100%;
+  height: 2px;
+  background-color: #53A8A8 !important;
+}
+.case-studies__library .scsl__status {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+}
+.case-studies__library .scsl__status .scsl__loader {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #0C0D0E;
+  backdrop-filter: blur(6px);
+}
+.case-studies__library .scsl__status .scsl__loader .scsl__spinner {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  border-top-color: rgba(255, 255, 255, 0.9);
+  animation: scslSpin 0.8s linear infinite;
+}
+.case-studies__library .scsl__status .scsl__loader[hidden] {
+  display: none;
+}
+.case-studies__library .scsl__results .scsl__grid {
+  gap: 24px !important;
+  padding: 24px !important;
+}
+@media (min-width: 1000px) {
+  .case-studies__library .scsl__results .scsl__grid {
+    gap: 32px !important;
+    padding: 32px !important;
+  }
+}
+.case-studies__library .scsl__results .scsl__grid .scsl__card {
+  position: relative;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 12px;
+  overflow: hidden;
+  width: 100%;
+  display: block;
+  text-decoration: none;
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transition: all 0.5s ease-in-out;
+}
+.case-studies__library .scsl__results .scsl__grid .scsl__card::before {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgb(12, 13, 14), rgba(0, 0, 0, 0) 100%);
+  content: "";
+  z-index: 2;
+}
+.case-studies__library .scsl__results .scsl__grid .scsl__card:nth-child(-n+3) {
+  grid-column: span 2/span 2;
+}
+.case-studies__library .scsl__results .scsl__grid .scsl__card a {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+}
+.case-studies__library .scsl__results .scsl__grid .scsl__card:hover {
+  transform: scale(1.01);
+}
+.case-studies__library .scsl__results .scsl__grid .scsl__card:hover .scsl__card-body .scsl__read-more svg {
+  margin-left: 12px;
+}
+.case-studies__library .scsl__results .scsl__grid .scsl__card .scsl__thumb {
+  position: absolute;
+  inset: 0;
+}
+.case-studies__library .scsl__results .scsl__grid .scsl__card .scsl__img {
+  width: 100% !important;
+  height: 100% !important;
+  max-height: none;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+  z-index: 1;
+}
+.case-studies__library .scsl__results .scsl__grid .scsl__card .scsl__card-body {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 16px;
+  z-index: 3;
+}
+@media (min-width: 1000px) {
+  .case-studies__library .scsl__results .scsl__grid .scsl__card .scsl__card-body {
+    padding: 24px;
+  }
+}
+.case-studies__library .scsl__results .scsl__grid .scsl__card .scsl__card-body .scsl__name {
+  color: #fff;
+  font-size: 24px !important;
+  line-height: normal;
+  margin-bottom: 0;
+}
+.case-studies__library .scsl__results .scsl__grid .scsl__card .scsl__card-body .scsl__read-more {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+.case-studies__library .scsl__results .scsl__grid .scsl__card .scsl__card-body .scsl__read-more svg {
+  width: 24px;
+  height: 24px;
+  margin-left: 8px;
+  transition: all 0.5s ease-in-out;
+}
+.case-studies__library .scsl__results .scsl__grid .scsl__card .scsl__card-body .scsl__read-more svg path {
+  fill: #fff;
+}
 /*# sourceMappingURL=case-studies.min.css.map */

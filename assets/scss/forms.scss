@@ -50,6 +50,7 @@ body[data-form-submit=regular] .container-wrap .gform_wrapper.gform-theme--found
         font-size: 15px;
         pointer-events: none;
         transition: 0.2s ease;
+        color: #161a1e !important;
         &.focused {
           top: 3px;
           font-size: 12px;
@@ -71,6 +72,19 @@ body[data-form-submit=regular] .container-wrap .gform_wrapper.gform-theme--found
     }
 
     .ginput_container {
+      &.ginput_container_textarea,
+      &.ginput_container_phone,
+      &.ginput_container_email,
+      &.ginput_container_text,
+      &.ginput_container_select {
+        border: 1px solid #7C7C7C !important;
+        block-size: auto !important;
+        border-radius: 100px !important;
+        background: $white;
+      }
+      &.ginput_container_textarea {
+        border-radius: 21px !important;
+      }
       input,
       select,
       textarea {
@@ -103,11 +117,12 @@ body[data-form-submit=regular] .container-wrap .gform_wrapper.gform-theme--found
   textarea {
     font-family: "Gotham", "Helvetica Neue", Helvetica, Arial, sans-serif;
     border-radius: 100px !important;
-    border: 1px solid #7C7C7C !important;
+    border: none !important;
     block-size: auto !important;
     padding: 22px 24px 10px !important;
     line-height: 1.2 !important;
     background-color: transparent !important;
+    color: #000;
     &:focus {
       box-shadow: none;
     }
@@ -120,7 +135,7 @@ body[data-form-submit=regular] .container-wrap .gform_wrapper.gform-theme--found
     background-size: 20px;
   }
   textarea {
-    border-radius: 21px !important;
+    
   }
 
   ::placeholder {

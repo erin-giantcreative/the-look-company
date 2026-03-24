@@ -37,6 +37,7 @@ function salient_child_enqueue_styles() {
 
   if ( is_page() && has_category( 'landing-page' ) ) {
     wp_enqueue_style( 'tlc-landing-page-style', get_stylesheet_directory_uri() . '/assets/css/landing-pages.min.css', array(), $v );
+    wp_enqueue_script( 'tlc-form-js' );
   }
 
   // Video taxonomy archive.

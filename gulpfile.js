@@ -173,6 +173,8 @@ const CRITICAL_PAGES = [
   "/signs-and-banners",
   "/services",
   "/thank-you",
+  // Landing pages share one critical file — use any landing page as the reference
+  { path: "/storepoint-fashion", slug: "landing-pages" },
 ];
 
 const CRITICAL_OPTIONS = {
@@ -193,7 +195,8 @@ const CRITICAL_OPTIONS = {
 
 async function critical() {
   for (const page of CRITICAL_PAGES) {
-    const slug = page === '/' ? 'home' : page.replace('/', '');
+    const path = typeof page === 'object' ? page.path : page;
+    const slug = typeof page === 'object' ? page.slug : (page === '/' ? 'home' : page.replace('/', ''));
     console.log(`  → Extracting critical CSS for: ${slug}`);
 
     // Scan global CSS + specific page CSS (fixes the 28K/23K issue)
@@ -203,7 +206,7 @@ async function critical() {
 
     const { css } = await generateCritical({
       ...CRITICAL_OPTIONS,
-      src: SITE_URL + page,
+      src: SITE_URL + path,
       css: cssFiles,
     });
 

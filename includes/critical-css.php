@@ -15,7 +15,13 @@
  * If critical.min.css does not exist, falls back to standard stylesheet load.
  */
 add_action( 'wp_head', function () {
-  $slug = is_front_page() ? 'home' : get_post_field( 'post_name', get_the_ID() );
+  if ( is_front_page() ) {
+    $slug = 'home';
+  } elseif ( is_page() && has_category( 'landing-page' ) ) {
+    $slug = 'landing-pages';
+  } else {
+    $slug = get_post_field( 'post_name', get_the_ID() );
+  }
   $critical_file = get_stylesheet_directory() . "/assets/css/critical-{$slug}.min.css";
 
   // Fallback to global if page-specific doesn't exist

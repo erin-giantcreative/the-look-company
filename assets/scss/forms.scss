@@ -51,6 +51,7 @@ body[data-form-submit=regular] .container-wrap .gform_wrapper.gform-theme--found
         pointer-events: none;
         transition: 0.2s ease;
         color: #161a1e !important;
+        color: #161a1e !important;
         &.focused {
           top: 3px;
           font-size: 12px;
@@ -133,9 +134,6 @@ body[data-form-submit=regular] .container-wrap .gform_wrapper.gform-theme--found
     background-repeat: no-repeat;
     background-position: right 24px center;
     background-size: 20px;
-  }
-  textarea {
-    
   }
 
   ::placeholder {

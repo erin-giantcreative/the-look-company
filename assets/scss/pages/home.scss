@@ -24,10 +24,13 @@
       }
       @include desktop {
         min-height: 720px;
-        max-height: 1080px;
+        max-height: 1920px;
       }
       .skbc-slide {
         .skbc-slide__content {
+          max-width: 1920px;
+          width: 100%;
+          margin: 0 auto;
           &-inner {
             display: flex;
             flex-direction: column;

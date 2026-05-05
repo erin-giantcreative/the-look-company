@@ -78,6 +78,10 @@
         color: #FFF;
         font-size: 13px;
         font-weight: 700;
+        @include mobile {
+          width: 100%;
+          text-align: center;
+        }
       }
       .sgim__select {
         border-radius: 6px;
